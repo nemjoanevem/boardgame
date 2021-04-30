@@ -1,5 +1,6 @@
 import { user } from './../objects';
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -31,6 +32,8 @@ export class LoginComponent implements OnInit {
 
         if(this.asciiToString(pwFromDB) === pwFromLogin){
           Ekkor enged csak be az oldalra
+          és itt kellene még localstorage-be tárolni a jelnelegi felhasználót id szerint
+          ami alapján majd elérjük, hogy neki milyen játékai vannak stb.
         }
         else{
           alert("Incorrect password!");
@@ -42,9 +45,18 @@ export class LoginComponent implements OnInit {
         alert("Incorrect name");
         localStorage.setItem("validLogin", "false");
           }; */
-      
+
+
+      //Ez csak próba, majd törölni kell
+      this.loginUser.email = "proba@email.cim";
+      this.loginUser.name = "proba nev";
+      this.loginUser.gender = "male";
+      this.loginUser.city = "Kölked";
       localStorage.setItem("validLogin", "true");
-      console.log("nice");
+      localStorage.setItem("currentUser", JSON.stringify(this.loginUser));
+      //Ez csak próba, majd törölni kell
+
+      
     }
     else{
       alert("Incorrect login!");
