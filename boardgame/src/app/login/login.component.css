@@ -1,6 +1,10 @@
 
 /* BASIC */
 
+a:not([href]):not([tabindex]) {
+  color: white;
+}
+
 html {
   background-color: #56baed;
 }
