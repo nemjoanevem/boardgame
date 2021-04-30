@@ -1,0 +1,36 @@
+<nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top fadeInDown">
+    <div class="container">
+
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+      <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
+        <li class="nav-item"><a class="nav-link" routerLink = '../main'>Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink = '../profile'>Profile</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink = '../events'>Events</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink = '../main'>Championship</a></li>
+        <li class="nav-item"><a class="nav-link" (click) = logoff()>Log off</a></li>
+      </ul>
+    </div>
+    </div>   
+  </nav>
+
+
+
+   <div class="cont-cards">
+    <div *ngFor="let event of events" class="card whole-card">
+      <div class="card shadow--tl">
+        <div class="card__image">
+          <img
+            height="300px"
+            src="https://us.123rf.com/450wm/martialred/martialred1604/martialred160400110/55731734-video-game-controller-gamepad-flat-icon-for-apps-and-websites.jpg?ver=6"
+            alt="{{event.organizer}}"
+          />
+        </div>
+        <div class="card__body">
+          <h3>{{event.place}}</h3>
+          <small>{{event.langauge}}</small>
+          <br>
+          <button name="Delete" id= "1" type="button" class="btn btn-dark"> View</button>
+        </div>
+      </div>
+    </div>
+   </div>
