@@ -13,4 +13,9 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logoff(){
+    localStorage.setItem("validLogin", "false");
+    window.location.reload();
+  }
+
 }
