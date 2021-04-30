@@ -1,6 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
+.navbar{
+    
+    background-color: antiquewhite;
+}
+
 a{
     
     color:rgb(0, 0, 0);
