@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EventsComponent } from './events/events.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    ProfileComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +28,8 @@ import { MainComponent } from './main/main.component';
     RouterModule.forRoot([
       {path: "login", component: LoginComponent},
       {path: "register", component: RegisterComponent},
+      {path: "events", component: EventsComponent, canActivate: [AuthGuard]},
+      {path: "profile", component: ProfileComponent, canActivate: [AuthGuard]},
       {path: "main", component: MainComponent, canActivate: [AuthGuard]},
       {
         path: '', redirectTo: '/login',
