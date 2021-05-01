@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
 
 
       //Ez csak próba, majd törölni kell
+      this.loginUser.id = 1;
       this.loginUser.email = "proba@email.cim";
       this.loginUser.name = "proba nev";
       this.loginUser.gender = "male";
