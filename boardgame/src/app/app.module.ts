@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventsComponent } from './events/events.component';
+import { EventViewComponent } from './event-view/event-view.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventsComponent } from './events/events.component';
     RegisterComponent,
     MainComponent,
     ProfileComponent,
-    EventsComponent
+    EventsComponent,
+    EventViewComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import { EventsComponent } from './events/events.component';
       {path: "events", component: EventsComponent, canActivate: [AuthGuard]},
       {path: "profile", component: ProfileComponent, canActivate: [AuthGuard]},
       {path: "main", component: MainComponent, canActivate: [AuthGuard]},
+      {path: "eventView", component: EventViewComponent, canActivate: [AuthGuard]},
       {
         path: '', redirectTo: '/login',
         pathMatch: 'full'
