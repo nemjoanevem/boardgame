@@ -64,8 +64,16 @@
                 </div>
               </div>
               <div class="row gutters-sm">
-                
-              </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Games</h6>
+                      <p *ngFor="let game of currentUserGames" >{{game}}</p>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>

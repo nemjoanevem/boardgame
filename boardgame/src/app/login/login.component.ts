@@ -1,4 +1,4 @@
-import { user } from './../objects';
+import { user, game } from './../objects';
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 
@@ -9,7 +9,9 @@ import { EmailValidator } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  currentUserGames = Array(); //Ezt fel kell tölteni majd az adott user játékaival DB-ből lekérdezéssel
   loginUser : user = new user;
+  tmpGame : game = new game;
 
   constructor() { }
 
@@ -34,6 +36,10 @@ export class LoginComponent implements OnInit {
           Ekkor enged csak be az oldalra
           és itt kellene még localstorage-be tárolni a jelnelegi felhasználót id szerint
           ami alapján majd elérjük, hogy neki milyen játékai vannak stb.
+
+          localStorage.setItem("validLogin", "true");
+          localStorage.setItem("currentUser", JSON.stringify(this.loginUser));
+          így kerülhetnek majd localstorage-ba az adott userhez tartozó játékok-> localStorage.setItem("currentUserGames", JSON.stringify(this.currentUserGames));
         }
         else{
           alert("Incorrect password!");
@@ -55,6 +61,11 @@ export class LoginComponent implements OnInit {
       this.loginUser.city = "Kölked";
       localStorage.setItem("validLogin", "true");
       localStorage.setItem("currentUser", JSON.stringify(this.loginUser));
+      this.tmpGame.name = "Dark souls";
+      this.currentUserGames[0] = this.tmpGame.name;
+      this.tmpGame.name = "asd";
+      this.currentUserGames[1] = this.tmpGame.name;
+      localStorage.setItem("currentUserGames", JSON.stringify(this.currentUserGames));
       //Ez csak próba, majd törölni kell
 
       
