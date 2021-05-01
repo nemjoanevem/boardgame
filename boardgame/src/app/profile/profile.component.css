@@ -55,3 +55,7 @@ body{
 .main-container{
     padding-top: 250px;
 }
+
+.btn-dark{
+    color: #fff;
+}

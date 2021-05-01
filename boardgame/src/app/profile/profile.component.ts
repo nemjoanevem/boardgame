@@ -16,7 +16,9 @@ export class ProfileComponent implements OnInit {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}') as user;
   }
 
-
+  editProfile(id: any){
+    
+  }
 
   logoff(){
     localStorage.setItem("validLogin", "false");
