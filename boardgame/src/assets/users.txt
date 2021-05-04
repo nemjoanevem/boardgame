@@ -1,0 +1,3 @@
+[{"id":1,"name":"peldanev","gender":"Male","password":"97a108a109a97a108a101a","email":"pelda1@email.cim","img_url":"https://finalspaceapi.com/api/character/avatar/gary_goodspeed.jpg","games":["Dark souls","Gloomhaven","Scythe","Bang"],"city":"Mohács"},
+{"id":2,"name":"masodiknev","gender":"Male","password":"97a108a109a97a108a101a","email":"pelda2@email.hu","img_url":"https://finalspaceapi.com/api/character/avatar/mooncake.jpg","games":["Terraform Mars","Gloomhaven","Pandemic","Bang"],"city":"Pécs"},
+{"id":3,"name":"harmadiknev","gender":"Female","password":"97a108a109a97a108a101a","email":"pelda3@email.hu","img_url":"https://finalspaceapi.com/api/character/avatar/mooncake.jpg","games":["Pandemic"],"city":"Somberek"}]

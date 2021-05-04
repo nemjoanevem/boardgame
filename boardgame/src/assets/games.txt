@@ -1,0 +1,7 @@
+[{"id":1,"name":"Dark souls","bgg_score":7,"password":"","age_limit":1,"img_url":"https://cf.geekdo-images.com/mHQMnDL317AKXCt9LojYxw__opengraph/img/cq53gzADvxvxVU3JtRbgr4Jt6Y4=/fit-in/1200x630/filters:strip_icc()/pic3784353.jpg"},
+{"id":2,"name":"Gloomhaven","bgg_score":8,"password":"","age_limit":2,"img_url":"https://cf.geekdo-images.com/sZYp_3BTDGjh2unaZfZmuA__opengraph_letterbox/img/OjoEjkXOOWW_ifjCTbIXMaoKYW4=/fit-in/1200x630/filters:fill(auto):strip_icc()/pic2437871.jpg"},
+{"id":1,"name":"Scythe","bgg_score":7,"password":"","age_limit":1,"img_url":"https://cf.geekdo-images.com/7k_nOxpO9OGIjhLq2BUZdA__opengraph_letterbox/img/30cJ5f6OmqA_4t4q-12ui-8IRkY=/fit-in/1200x630/filters:fill(auto):strip_icc()/pic3163924.jpg"},
+{"id":2,"name":"Bang","bgg_score":8,"password":"","age_limit":2,"img_url":"https://www.board-game.co.uk/wp-content/uploads/2018/08/Bang-4th-Edition-Card-Game.jpg"},
+{"id":1,"name":"Munchkin","bgg_score":7,"password":"","age_limit":1,"img_url":"https://cf.geekdo-images.com/J-ts3MW0UhDzs621TR6cog__itemrep/img/2MRtjy32fdzTBDCvUk73dA-ZtJk=/fit-in/246x300/filters:strip_icc()/pic1871016.jpg"},
+{"id":2,"name":"Secret Hitler","bgg_score":8,"password":"","age_limit":2,"img_url":"https://cf.geekdo-images.com/rAQ3hIXoH6xDcj41v9iqCg__opengraph_letterbox/img/mmVF2DKlRDrF7pPB7qS2BAqkkNk=/fit-in/1200x630/filters:fill(auto):strip_icc()/pic5164305.jpg"},
+{"id":3,"name":"Pandemic","bgg_score":4,"password":"","age_limit":3,"img_url":"https://upload.wikimedia.org/wikipedia/en/3/36/Pandemic_game.jpg"}]

@@ -1,14 +1,44 @@
-              <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top fadeInDown">
+              <nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
                 <div class="container">
 
                 <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
                   <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
                     <li class="nav-item"><a class="nav-link" routerLink = '../main'>Home</a></li>
-                    <li class="nav-item"><a class="nav-link" routerLink = '../profile'>Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink = '../profile' (click) = profile()>Profile</a></li>
                     <li class="nav-item"><a class="nav-link" routerLink = '../events'>Events</a></li>
                     <li class="nav-item"><a class="nav-link" routerLink = '../main'>Championship</a></li>
-                    <li class="nav-item"><a class="nav-link" (click) = logoff()>Log off</a></li>
+                    <li class="nav-item"><a class="nav-link" (click) = logoff() routerLink = ''>Log off</a></li>
                   </ul>
                 </div>
                 </div>   
               </nav>
+
+
+
+ 
+              
+              <div class="wrapper fadeInDown">
+                <div id="formContent">
+                  <!-- Tabs Titles -->
+              
+                  <!-- Icon -->
+                  <div class="fadeIn first"> </div>
+              
+                  <!-- Login Form -->
+                  <form>
+                  <input type="text" id="game" class="fadeIn second"  placeholder="Game name">
+                  <input type="text" id="place" class="fadeIn second"  placeholder="Place">
+                  <input type="text" id="time" class="fadeIn second" placeholder="Date">
+                  <input type="number" id="maxply" class="fadeIn third"  placeholder="Max players">
+                  
+                  <button type="button" class="btn btn-default btn-circle btn-xl fadeIn fourth" (click) = "createNewEvent()"><i class="fa fa-check">+</i>
+                  </button>
+                  </form>
+                  
+              
+                  <div id="formFooter">
+                    <p>Create New Event</p>
+                  </div>
+              
+                </div>
+              </div>

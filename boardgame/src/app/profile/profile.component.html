@@ -1,13 +1,13 @@
-<nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top fadeInDown">
+<nav class="menum navbar navbar-light navbar-expand-md justify-content-center fixed-top">
     <div class="container">
 
     <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
       <ul class="topBotomBordersOut navbar-nav mx-auto text-center">
         <li class="nav-item"><a class="nav-link" routerLink = '../main'>Home</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink = '../profile'>Profile</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink = '../profile' (click) = profile()>Profile</a></li>
         <li class="nav-item"><a class="nav-link" routerLink = '../events'>Events</a></li>
         <li class="nav-item"><a class="nav-link" routerLink = '../main'>Championship</a></li>
-        <li class="nav-item"><a class="nav-link" (click) = logoff()>Log off</a></li>
+        <li class="nav-item"><a class="nav-link" (click) = logoff() routerLink = ''>Log off</a></li>
       </ul>
     </div>
     </div>   
@@ -24,7 +24,7 @@
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>{{currentUser.name}}</h4>
-                      <button type="button" class="btn btn-dark" (click) = editProfile(currentUser.id)>Edit profile</button>
+                      <button *ngIf="profileView" type="button" class="btn btn-dark" (click) = editProfile(currentUser.id)>Edit profile</button>
                     </div>
                     
                   </div>
@@ -70,6 +70,15 @@
                       <h6 class="d-flex align-items-center mb-3">Games</h6>
                       <p *ngFor="let game of currentUserGames" >{{game}}</p>
                       
+                      
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="profileView" class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h6 class="d-flex align-items-center mb-3">Joined Events</h6>
+                      <p *ngFor="let event of currentUserEvents" >{{event.game}} / {{event.place}} / {{event.time}}</p>
                       
                     </div>
                   </div>

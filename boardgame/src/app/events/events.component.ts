@@ -28,41 +28,27 @@ export class EventsComponent implements OnInit {
   constructor(private _router : Router){}
 
   ngOnInit(): void {
-
-
-    // példa
-    this.impEvent.id = 1;
-    this.impEvent.organizer = "Pelda Felhasznalo";
-    this.impEvent.place = "Mohács";
-    this.impEvent.langauge = "eng";
-    this.impEvent.game = "Dark souls";
-    this.impEvent.time = "06.20 14:00"
-
-    this.tmpGame.name="Dark souls";
-    this.tmpGame.id=1;
-    this.tmpGame.bgg_score=7;
-    this.tmpGame.thumbnail="https://cf.geekdo-images.com/mHQMnDL317AKXCt9LojYxw__opengraph/img/cq53gzADvxvxVU3JtRbgr4Jt6Y4=/fit-in/1200x630/filters:strip_icc()/pic3784353.jpg";
-    
-    let i = 0;
-    while(i<10){
-      i = i+1;
-      this.impEvent.id = i+1;
-      this.events.push(this.impEvent);
+    let fromStorageEvt : any = JSON.parse(localStorage.getItem('events') || '{}') as event;
+    for(const key in fromStorageEvt){
+      if (fromStorageEvt.hasOwnProperty(key)){
+        this.events.push(fromStorageEvt[key]);
+        }
     }
-
-    this.games.push(this.tmpGame);
-    // példa
-
-
-    /* pl így lehetne feltölteni az events-et
-
-    for(const key in "db-s tömb amiben vannak az event objectek"){
-      if ("db-s tömb amiben vannak az event objectek".hasOwnProperty(key)){
-        this.events.push("db-s tömb amiben vannak az event objectek"[key]);
+    let fromStorageGames : any = JSON.parse(localStorage.getItem('games') || '{}') as game;
+    for(const key in fromStorageGames){
+      if (fromStorageGames.hasOwnProperty(key)){
+        this.games.push(fromStorageGames[key]);
         }
     }
 
-     */
+    const updatedItem: any = JSON.parse(localStorage.getItem('currentEvent') || '{}') as event;
+    const updatedItemId: any = updatedItem.id;
+
+    const index = this.events.indexOf(this.events.find(x=> x.id === updatedItemId));
+    if (index != -1){
+      this.events[index] = updatedItem;
+    }
+
   }
 
   viewBtn(id: any){
@@ -74,8 +60,8 @@ export class EventsComponent implements OnInit {
         localStorage.setItem("currentEvent", JSON.stringify(this.events[index]));
         let currentGameName = this.events[index].game;
         const index2 = this.games.indexOf(this.games.find(x=> x.name === currentGameName));
-        if (index != -1){
-          localStorage.setItem("currentGame", JSON.stringify(this.games[index]));
+        if (index2 != -1){
+          localStorage.setItem("currentGame", JSON.stringify(this.games[index2]));
         }
     }
 
@@ -83,8 +69,20 @@ export class EventsComponent implements OnInit {
   }
 
   logoff(){
+    localStorage.removeItem("organizerUser");
+    localStorage.removeItem("currentEvent");
+    localStorage.removeItem("currentGame");
+    localStorage.removeItem("currentUserEvent");
+    localStorage.removeItem("currentUserJoinedEvents");
+    localStorage.removeItem("currentLoginUser");
     localStorage.setItem("validLogin", "false");
     window.location.reload();
   }
+
+  profile(){
+    localStorage.setItem("profileView", "true");
+  }
+
+  
 
 }

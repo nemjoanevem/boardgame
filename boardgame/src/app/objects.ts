@@ -10,25 +10,26 @@ export class user{
     played_parties: number;
     created_parties: number;
     status: boolean; //true online, false offline
+    games: string[];
 }
 
 export class event{
     id: number;
     organizer: string;
-    place: string;
     langauge: string;
-    max_players: number;
-    min_players: number;
-    time: string; // time-start
-    time_end: string;
-    time_created: string;
+    password: string;
     game: string;
+    img_url: string;
+    place: string;
+    time: string; // time-start
+    maxPlayer: number;
+    currentPlayer: number;
 }
 
 export class game{
     id: number;
     name: string;
-    thumbnail: string;
+    img_url: string;
     release_date: string;
     age_limit: number;
     time: number;

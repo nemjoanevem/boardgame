@@ -11,11 +11,18 @@ import { RouterLink } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  users = Array();
   newUser : user = new user;
 
   constructor() { }
 
   ngOnInit(): void {
+    let fromStorage : any = JSON.parse(localStorage.getItem('users') || '{}') as user;
+    for(const key in fromStorage){
+      if (fromStorage.hasOwnProperty(key)){
+        this.users.push(fromStorage[key]);
+        }
+    }
   }
 
   register(){
@@ -29,32 +36,42 @@ export class RegisterComponent implements OnInit {
     let pw = (<HTMLInputElement>document.getElementById('password')).value;
     if(this.newUser.name.length > 3){
       if(this.emailValid(this.newUser.email)){
-        /* if(a név és email cim nincs benne a db-ben {*/
+        if(this.loginCheck(this.newUser.name)){
           if(pw.length > 5){
             alert("Registration succeced!");
             this.newUser.password = this.passwordToAscii(pw);
-            /* this.newUser -> DB */
+            this.newUser.id = this.users.length+1;
+            localStorage.setItem("newUser", JSON.stringify(this.newUser));
+
           }
           else alert("Password must contain at least 5 characters!");
-
-        /*}
-          else alert("Username or Email is already taken!");*/
+        }
+          else alert("Username is already taken!");
       }
       else alert("Email is invalid!");
     }
     else alert("Name must contain at least 3 characters!");
   }
 
-  passwordToAscii(pw: any){
+  passwordToAscii(pw: any){ //Átalakítja a jelszót ascii karakterekké, hogy ne simán legyen tárolva a DB-ben
     const char = pw.split('');
     for(const i in char){
       char[i] = char[i].charCodeAt(0)+"a";
     }
     var string = char.join("");
+    console.log(string);
     return string;
   }
-  emailValid = (email : any) => {
+  emailValid = (email : any) => { //Ellenőrzi, hogy az emailcim valid-e
     const emailRegex = /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/;
     return emailRegex.test(email);
+
+}
+loginCheck(name : any){ //Megnézi, hogy a form-ra beírt login név szerepel-e a DB-ben
+  const index = this.users.indexOf(this.users.find(x=> x.name === name));
+  if (index != -1){
+    return false;
+  }
+  else return true;
 }
 }
