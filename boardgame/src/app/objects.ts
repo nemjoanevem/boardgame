@@ -24,6 +24,7 @@ export class event{
     time: string; // time-start
     maxPlayer: number;
     currentPlayer: number;
+    joinedPlayers: string[];
 }
 
 export class game{

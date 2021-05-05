@@ -36,5 +36,16 @@
    }
 
    .whole-card{
-    max-width: 18%;
+    max-width: 16%;
+    min-width: 16%;
    }
+
+   img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

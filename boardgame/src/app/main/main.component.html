@@ -26,9 +26,12 @@
               
                   <!-- Login Form -->
                   <form>
-                  <input type="text" id="game" class="fadeIn second"  placeholder="Game name">
+                  <select type="text" id="game" class="fadeIn second">
+                    <option *ngFor="let game of gamesArray" >{{game.name}}</option>
+                  </select>
                   <input type="text" id="place" class="fadeIn second"  placeholder="Place">
                   <input type="text" id="time" class="fadeIn second" placeholder="Date">
+                  <input type="text" id="langauge" class="fadeIn third" placeholder="Langauge">
                   <input type="number" id="maxply" class="fadeIn third"  placeholder="Max players">
                   
                   <button type="button" class="btn btn-default btn-circle btn-xl fadeIn fourth" (click) = "createNewEvent()"><i class="fa fa-check">+</i>
