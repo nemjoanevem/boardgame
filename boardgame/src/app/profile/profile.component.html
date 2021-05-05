@@ -52,15 +52,6 @@
                         {{currentUser.city}}
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Sex</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        {{currentUser.gender}}
-                    </div>
-                  </div>
                 </div>
               </div>
               <div class="row gutters-sm">
@@ -93,7 +84,6 @@
                           <option *ngFor="let game of games" >{{game.name}}</option>
                         </select>
                         <input type="text" id="place"  placeholder="City">
-                        <input type="text" id="sex" placeholder="Sex">
                         <input type="text" id="email"  placeholder="Email adress">
                         
                         <button type="button" class="btn btn-default" (click) = editProfileSave(currentUser.id)>Save

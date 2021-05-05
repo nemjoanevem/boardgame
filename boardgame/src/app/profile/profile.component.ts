@@ -69,7 +69,6 @@ export class ProfileComponent implements OnInit {
 
     let email = (<HTMLInputElement>document.getElementById('email')).value;
     let city = (<HTMLInputElement>document.getElementById('place')).value;
-    let gender = (<HTMLInputElement>document.getElementById('sex')).value;
     let game = (<HTMLInputElement>document.getElementById('game')).value;
     
     if(this.emailValid(email)){
@@ -77,9 +76,6 @@ export class ProfileComponent implements OnInit {
     }
     if(city != "" && city != null){
       this.currentUser.city = city;
-    }
-    if(gender != null && gender != ""){
-      this.currentUser.gender = gender;
     }
     if(game != null && this.gameCheck(game)){
     this.currentUserGames.push(game);
